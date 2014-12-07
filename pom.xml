@@ -9,18 +9,23 @@
   <dependencies>
   	<dependency>
   		<groupId>net.paoding</groupId>
-  		<artifactId>paoding-rose</artifactId>
-  		<version>1.2-SNAPSHOT</version>
+  		<artifactId>rose-web</artifactId>
+  		<version>1.0-SNAPSHOT</version>
   	</dependency>
   	<dependency>
   		<groupId>net.paoding</groupId>
-  		<artifactId>paoding-rose-context</artifactId>
-  		<version>1.2-SNAPSHOT</version>
+  		<artifactId>rose-jade</artifactId>
+  		<version>1.1-SNAPSHOT</version>
   	</dependency>
   	<dependency>
   		<groupId>net.paoding</groupId>
-  		<artifactId>paoding-rose-jade</artifactId>
-  		<version>1.2-SNAPSHOT</version>
+  		<artifactId>rose-scanning</artifactId>
+  		<version>1.0-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>net.paoding</groupId>
+  		<artifactId>rose-portal</artifactId>
+  		<version>1.0-SNAPSHOT</version>
   	</dependency>
   </dependencies>
 </project>
