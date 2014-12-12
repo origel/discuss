@@ -1,0 +1,62 @@
+// styles that apply to the "share" popup when sharing a link to a post or topic
+
+#share-link {
+  position: absolute;
+  left: 20px;
+  z-index: 1200;
+  box-shadow: 0 1px 5px rgba(0,0,0, .4);
+  background-color: $secondary;
+  padding: 6px 10px 10px 10px;
+  width: 300px;
+  display: none;
+  &.visible {
+    display: block;
+  }
+  input[type=text], .share-for-touch .overflow-ellipsis {
+    width: 96%;
+  }
+  .share-for-touch {
+    margin: 14px 0;
+  }
+  h3 {
+    font-size: 13px;
+  }
+  .social-link {
+    margin-left: 2px;
+    margin-right: 8px;
+    float: left;
+    font-size: 22px;
+  }
+  .link {
+    margin-right: 2px;
+    float: right;
+    font-size: 20px;
+    a {
+      color: $primary;
+    }
+  }
+
+  h3 {
+    margin: 5px 0;
+    float: left;
+  }
+
+  .date {
+    float: right;
+    margin: 5px;
+    color: scale-color($primary, $lightness: 50%);
+  }
+
+  input[type=text] {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+
+.discourse-no-touch #share-link .share-for-touch {
+  display: none;
+}
+
+.discourse-touch #share-link input[type=text] {
+  display: none;
+}
