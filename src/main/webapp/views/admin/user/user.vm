@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MIUI后台管理系统 - 小米</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<style type="text/css">
+        html,body {
+        font-size: 14px;
+		padding-top:20px;
+      }
+    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="${contextPath}/${bootstrap_home}/css/bootstrap.css?ver=$revxxx$" />
+  </head>
+  <body>
+    <div id="wrap" class="container-fluid" style="padding-left: 14px;padding-right: 14px;">
+		<ul class="breadcrumb">
+          <li><a href="#">首页</a> <span class="divider">/</span></li>
+          <li><a href="#">文件管理器</a> <span class="divider">/</span></li>
+          <li class="active">应用管理</li>
+        </ul>
+		<div style="margin-bottom:16px">
+			<button type="submit" class="btn btn-primary" onclick="to('${contextPath}/admin/user/add.html'); return false;">添加</button>&nbsp;&nbsp;
+		</div>
+		<table class="table" style="border: 1px solid #DDDDDD;">
+              <thead>
+                <tr>
+                  <th width="50px">序号</th>
+                  <th>userId</th>
+                  <th>name</th>
+                  <th>username</th>
+                  <th>email</th>
+                  <th>password</th>
+                  <th>active</th>
+                  <th>admin</th>
+                  <th>moderator</th>
+                  <th>approved</th>
+                  <th>trustLevel</th>
+                  <th>avatar</th>
+				  <th width="100px">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+#foreach($user in $userList)
+                <tr>
+#set($indexNum=$velocityCount + $pageInfo.offset)
+                  <td>${indexNum}</td>
+                  <td>$!user.userId</td>
+                  <td>$!user.name</td>
+                  <td>$!user.username</td>
+                  <td>$!user.email</td>
+                  <td>$!user.password</td>
+                  <td>$!user.active</td>
+                  <td>$!user.admin</td>
+                  <td>$!user.moderator</td>
+                  <td>$!user.approved</td>
+                  <td>$!user.trustLevel</td>
+                  <td>$!user.avatar</td>
+                  <td>
+					<a href="/admin/user/edit.html?id=$!user.id">编辑</a>
+				    <a href="#remove" onclick="removeAction(this);return false;" data-url="${contextPath}/admin/user/remove.do" data-param="{id:'$!user.id'}" data-title="--请替换此删除提示!--">删除</a>
+				  </td>
+                </tr>
+#end
+              </tbody>
+          </table>
+#pagination($contextPath, $pageInfo)
+    </div>
+    <div id="remove" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$('#remove').modal('hide');">×</button>
+            <h3 id="myModalLabel">确定删除</h3>
+        </div>
+        <div class="modal-body">
+            <p>确定删除这行记录: <label id="remove_title"></label></p>
+    		<form id="remove_form" action="${contextPath}/admin/user/remove.do" method="POST">
+                <fieldset>
+                    <input type="hidden" id="remove_userId" name="userId" placeholder="userId…" value="">
+                    <input type="hidden" id="remove_name" name="name" placeholder="name…" value="">
+                    <input type="hidden" id="remove_username" name="username" placeholder="username…" value="">
+                    <input type="hidden" id="remove_email" name="email" placeholder="email…" value="">
+                    <input type="hidden" id="remove_password" name="password" placeholder="password…" value="">
+                    <input type="hidden" id="remove_active" name="active" placeholder="active…" value="">
+                    <input type="hidden" id="remove_admin" name="admin" placeholder="admin…" value="">
+                    <input type="hidden" id="remove_moderator" name="moderator" placeholder="moderator…" value="">
+                    <input type="hidden" id="remove_approved" name="approved" placeholder="approved…" value="">
+                    <input type="hidden" id="remove_trustLevel" name="trustLevel" placeholder="trustLevel…" value="">
+                    <input type="hidden" id="remove_avatar" name="avatar" placeholder="avatar…" value="">
+                </fieldset>
+            </form>
+    		<div id="remove_message" class="alert alert-error" style="display:none">
+    			<strong>错误:</strong>添加失败!请检查参数！
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true" onclick="$('#remove').modal('hide');">关闭</button>
+            <button class="btn btn-danger" onclick="ajaxSubmit('#remove_form','#remove_message')">删除</button>
+        </div>
+    </div>
+#parse("views/inc/js.vm")
+  </body>
+</html>

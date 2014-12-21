@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MIUI后台管理系统 - 小米</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<style type="text/css">
+body{font-size:14px;padding-top:20px;}
+</style>
+<!-- CSS -->
+<link rel="stylesheet" href="${contextPath}/css/style.css?v=$rev$" />
+<style type="text/css">
+.table td,.table th{line-height:24px;}
+.table td{vertical-align:middle;}
+.table th{vertical-align:top;text-align:right;padding-top:13px;}
+.table label{margin-bottom:0;}
+.table th span{font-weight:normal;font-size:12px;}
+input[type="text"],textarea,select,.uneditable-input{margin-bottom:0;}
+label.error{margin-top:3px;padding-bottom:0;}
+tbody tr:first-child th, tbody tr:first-child td{border-top:0;}
+</style>
+</head>
+<body>
+<div id="wrap" class="container-fluid" style="padding-left: 14px;padding-right: 14px;">
+    <ul class="breadcrumb">
+      <li><a href="#">首页</a> <span class="divider">/</span></li>
+      <li><a href="#">日历管理</a> <span class="divider">/</span></li>
+      <li class="active">添加订阅</li>
+    </ul>
+    <form id="form" action="${contextPath}/admin/user/edit.do" method="POST" style="margin-bottom:0px;">
+        <fieldset>
+            <table class="table">
+                <tbody >
+                    <tr>
+                        <th width="200px"><label><strong>userId<span style="color:red">(必填)</span>:</strong></label></th>
+                        <td><input type="text" id="edit_userId" name="userId" placeholder="userId…" style="width:520px" value="" /></td>
+                    </tr>
+                    <tr>
+                        <th width="200px"><label><strong>name<span style="color:red">(必填)</span>:</strong></label></th>
+                        <td><input type="text" id="edit_name" name="name" placeholder="name…" style="width:520px" value="" /></td>
+                    </tr>
+                    <tr>
+                        <th width="200px"><label><strong>username<span style="color:red">(必填)</span>:</strong></label></th>
+                        <td><input type="text" id="edit_username" name="username" placeholder="username…" style="width:520px" value="" /></td>
+                    </tr>
+                    <tr>
+                        <th width="200px"><label><strong>email<span style="color:red">(必填)</span>:</strong></label></th>
+                        <td><input type="text" id="edit_email" name="email" placeholder="email…" style="width:520px" value="" /></td>
+                    </tr>
+                    <tr>
+                        <th width="200px"><label><strong>password<span style="color:red">(必填)</span>:</strong></label></th>
+                        <td><input type="text" id="edit_password" name="password" placeholder="password…" style="width:520px" value="" /></td>
+                    </tr>
+                    <tr>
+                        <th width="200px"><label><strong>是否active<span style="color:red">(必填)</span>:</strong></label></th>
+                        <td>
+                            <label class="checkbox">
+                                <input type="checkbox" id="edit_active" name="active" value="1">active
+                            </label>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th width="200px"><label><strong>是否admin<span style="color:red">(必填)</span>:</strong></label></th>
+                        <td>
+                            <label class="checkbox">
+                                <input type="checkbox" id="edit_admin" name="admin" value="1">admin
+                            </label>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th width="200px"><label><strong>是否moderator<span style="color:red">(必填)</span>:</strong></label></th>
+                        <td>
+                            <label class="checkbox">
+                                <input type="checkbox" id="edit_moderator" name="moderator" value="1">moderator
+                            </label>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th width="200px"><label><strong>是否approved<span style="color:red">(必填)</span>:</strong></label></th>
+                        <td>
+                            <label class="checkbox">
+                                <input type="checkbox" id="edit_approved" name="approved" value="1">approved
+                            </label>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th width="200px"><label><strong>trustLevel<span style="color:red">(必填)</span>:</strong></label></th>
+                        <td><input type="text" id="edit_trustLevel" name="trustLevel" placeholder="trustLevel…" style="width:520px" value="" /></td>
+                    </tr>
+                    <tr>
+                        <th width="200px"><label><strong>avatar<span style="color:red">(必填)</span>:</strong></label></th>
+                        <td><input type="text" id="edit_avatar" name="avatar" placeholder="avatar…" style="width:520px" value="" /></td>
+                    </tr>
+                    <tr><th></th>
+                        <td class="btn-toolbar">
+                             <button type="submit" class="btn btn-primary">提交</button>
+                             <button type="button" class="btn" data-dismiss="modal" aria-hidden="true" onclick="history.go(-1);">返回</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+</div>
+#parse("views/inc/js.vm")
+#parse("views/inc/jsuploader.vm")
+<script>
+jQuery(document).ready(function($) {
+    jQuery.getJSON('${contextPath}/admin/user/get.do', {id: ''}, function(data) {
+        jQuery.fillForm('#form', data);
+    });
+    jQuery("#form").validate({
+        submitHandler: function(form) {
+            ajaxSubmitForm('#form', 1500, function(){
+                to('${contextPath}/admin/user/list.html');
+            });
+        }
+    });
+});
+</script>
+</body></html>
