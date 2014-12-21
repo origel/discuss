@@ -1,0 +1,15 @@
+<html>
+	<head>
+#include('views/inc/style.vm')
+    </head>
+	<body>
+		<section id="main">
+#parse('views/inc/header.vm')
+		<ul class="nav nav-pills" role="tablist">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+        </ul>
+		</section>
+    </body>
+</html>
