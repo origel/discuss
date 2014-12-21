@@ -1,5 +1,25 @@
-<div class="container">
-  <div class="contents clearfix">
-<img alt="Discourse中文社区" src="http://mywebcdn.b0.upaiyun.com/images/discn-logo.png" class="logo-big" id="site-logo">
-  </div>
+<div class="container header-box">
+    <div class="container">
+        <div class="contents clearfix" style="padding:10px 0px">
+            <img alt="Discourse中文社区" src="${contextPath}/assets/images/logo.png" class="logo-big" id="site-logo" />
+            <div class="panel clearfix">
+                <a href="#" class="discussIconLink">
+                    <span class="glyphicon glyphicon-th-list discussicon">
+                    </span>
+                </a>
+            </div>
+            <div class="panel clearfix">
+                <a href="#" class="discussIconLink">
+                    <span class="glyphicon glyphicon-search discussicon">
+                    </span>
+                </a>
+            </div>
+            <div class="panel clearfix">
+                <button class="btn btn-primary btn-small sign-up-button" data-ember-action="1168">注册</button>
+                <button class="btn btn-primary btn-small login-button" data-ember-action="1167">
+                    <i class="glyphicon glyphicon-user"></i>
+                    &nbsp;登录 </button>
+            </div>
+        </div>
+    </div>
 </div>

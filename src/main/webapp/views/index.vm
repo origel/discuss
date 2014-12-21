@@ -1,15 +1,117 @@
 <html>
-	<head>
-#include('views/inc/style.vm')
+    <head>
+        #parse('views/inc/style.vm')
     </head>
-	<body>
-		<section id="main">
-#parse('views/inc/header.vm')
-		<ul class="nav nav-pills" role="tablist">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-        </ul>
-		</section>
+    <body>
+        <section id="main">
+            #parse('views/inc/header.vm')
+            <div class="container hgt10">
+            </div>
+            <div class="container">
+                <div class="row" style="margin-left: 0px;">
+                    <div style="float:left">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">所有分类 <span class="caret"></span>
+                            </button>
+                            <ul id="indexMenu" class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#">Action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Something else here</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">Separated link</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="float:left;padding-left:10px;">
+                        <ul id="navList" class="nav nav-pills" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#" class="navLink">最新</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="navLink">热门</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="navLink">分类</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container hgt10">
+            </div>
+            <div class="container">
+                <table class="table table-striped topicList">
+                    <thead>
+                        <tr>
+                            <th>主题</th>
+                            <th style="width:120px;">分类</th>
+                            <th style="width:204px;">参与者</th>
+                            <th style="width:60px;">帖子</th>
+                            <th style="width:60px;">浏览</th>
+                            <th style="width:60px;">活动</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>发言标题艺术人的追求号咯咯听哦</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>4日前</td>
+                        </tr>
+                        <tr>
+                            <td>发言标题艺术人的追求号咯咯听哦</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>4日前</td>
+                        </tr>
+                        <tr>
+                            <td>发言标题艺术人的追求号咯咯听哦</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>4日前</td>
+                        </tr>
+                        <tr>
+                            <td>发言标题艺术人的追求号咯咯听哦</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>4日前</td>
+                        </tr>
+                        <tr>
+                            <td>发言标题艺术人的追求号咯咯听哦</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>4日前</td>
+                        </tr>
+                        <tr>
+                            <td>发言标题艺术人的追求号咯咯听哦</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>4日前</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        #parse('views/inc/js.vm')
     </body>
 </html>

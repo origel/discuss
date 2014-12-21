@@ -1,0 +1,66 @@
+body {
+	font-size:16px;
+}
+.hgt1 {height:1px;}
+.hgt2 {height:2px;}
+.hgt3 {height:3px;}
+.hgt4 {height:4px;}
+.hgt5 {height:5px;}
+.hgt6 {height:6px;}
+.hgt7 {height:7px;}
+.hgt8 {height:8px;}
+.hgt9 {height:9px;}
+.hgt10 {height:10px;}
+
+.header-box {
+	box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.25);
+	width:100%;
+}
+
+.topicList {
+	border-top:1px solid #e9e9e9;
+}
+#navList > li > a {
+    display: block;
+    padding: 3.5px 15px;
+    position: relative;
+}
+#indexMenu > li > a {
+    font-size: 16px;
+    padding: 3px 20px;
+}
+.btn-default {
+	font-size:16px;
+	padding: 3px 12px;
+}
+.btn-small {
+	font-size:12px;
+}
+#site-logo {
+	 height:40px;
+}
+.panel {
+	float:right;
+	margin-bottom: 0px;
+	margin-top: 3px;
+	height:40px;
+	line-height:40px;
+	box-shadow:none;
+}
+.discussicon {
+	 font-size: 21px;
+	 display: inline-block;
+    font-size: 21px;
+    height: 32px;
+    line-height: 32px;
+    width: 32px;
+    text-align:center;
+}
+.discussIconLink {
+	padding:3px 3px;
+	line-height:32px;
+	display: block;
+}
+.discussIconLink:hover {
+	background:#e9e9e9;
+}
