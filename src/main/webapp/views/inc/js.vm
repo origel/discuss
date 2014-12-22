@@ -1,2 +1,3 @@
 <script src="${contextPath}/assets/js/jquery-1.9.1.min.js"></script>
 <script src="${contextPath}/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="${contextPath}/assets/bootstrap/js/typeahead.min.js"></script>

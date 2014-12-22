@@ -3,20 +3,39 @@
         <div class="contents clearfix" style="padding:10px 0px">
             <img alt="Discourse中文社区" src="${contextPath}/assets/images/logo.png" class="logo-big" id="site-logo" />
             <div class="panel clearfix">
-                <a href="#" class="discussIconLink">
-                    <span class="glyphicon glyphicon-th-list discussicon">
+				<ul id="listLink" class="nav navbar-nav navbar-right navbar-discuss">
+                    <li class="dropdown" id="fat-menu">
+                      <a class="discussIconLink" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" class="dropdown-toggle" href="#" id="drop3">
+                        <span class="glyphicon glyphicon-th-list discussicon">
                     </span>
-                </a>
+                      </a>
+                      <ul id="listLinkMenu"class="dropdown-menu">
+                        <li ><a href="https://twitter.com/fat" tabindex="-1" role="menuitem">最新</a></li>
+                        <li ><a href="https://twitter.com/fat" tabindex="-1" role="menuitem">徽章</a></li>
+                        <li ><a href="https://twitter.com/fat" tabindex="-1" role="menuitem">键盘快捷键</a></li>
+                        <li ><a href="https://twitter.com/fat" tabindex="-1" role="menuitem">常见问题</a></li>
+                        <li ><a href="https://twitter.com/fat" tabindex="-1" role="menuitem">关于</a></li>
+						<li class="divider" ></li>
+                        <li ><a href="https://twitter.com/fat" tabindex="-1" role="menuitem">分类</a></li>
+                      </ul>
+                    </li>
+                  </ul>
             </div>
             <div class="panel clearfix">
-                <a href="#" class="discussIconLink">
-                    <span class="glyphicon glyphicon-search discussicon">
-                    </span>
-                </a>
+				<ul class="nav navbar-nav navbar-right navbar-discuss">
+                    <li class="dropdown" id="fat-menu">
+                      <a class="discussIconLink" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" class="dropdown-toggle" href="#" id="drop3">
+                        <span class="glyphicon glyphicon-search discussicon"> </span>
+                      </a>
+                      <div class="dropdown-menu" style="width:540px;padding-left:10px;padding-right:20px;">
+						<input type="text" placeholder="搜索主题、帖子、用户或分类" id="exampleInputPassword1" class="form-control">
+                      </div>
+                    </li>
+                  </ul>
             </div>
             <div class="panel clearfix">
-                <button class="btn btn-primary btn-small sign-up-button" data-ember-action="1168">注册</button>
-                <button class="btn btn-primary btn-small login-button" data-ember-action="1167">
+                <button class="btn btn-primary btn-small sign-up-button" data-toggle="modal" data-target="#register">注册</button>
+                <button class="btn btn-primary btn-small login-button" data-toggle="modal" data-target="#login">
                     <i class="glyphicon glyphicon-user"></i>
                     &nbsp;登录 </button>
             </div>

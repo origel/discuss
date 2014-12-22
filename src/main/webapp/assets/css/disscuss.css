@@ -29,6 +29,12 @@ body {
     font-size: 16px;
     padding: 3px 20px;
 }
+.navbar-discuss {
+	margin-right: 0px;
+}
+.navbar-discuss > li > a {
+    padding: 3px;
+}
 .btn-default {
 	font-size:16px;
 	padding: 3px 12px;
@@ -63,4 +69,7 @@ body {
 }
 .discussIconLink:hover {
 	background:#e9e9e9;
+}
+#listLinkMenu {
+	width:320px;
 }

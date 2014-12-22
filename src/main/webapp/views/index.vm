@@ -4,7 +4,7 @@
     </head>
     <body>
         <section id="main">
-            #parse('views/inc/header.vm')
+#parse('views/inc/header.vm')
             <div class="container hgt10">
             </div>
             <div class="container">
@@ -48,7 +48,7 @@
             <div class="container hgt10">
             </div>
             <div class="container">
-                <table class="table table-striped topicList">
+                <table id="topicList" class="table table-striped topicList">
                     <thead>
                         <tr>
                             <th>主题</th>
@@ -111,7 +111,32 @@
                     </tbody>
                 </table>
             </div>
+			<div id="noTopic" class="container" style="display:none">
+               <h3> 没有更多主题可看了。</h3>
+            </div>
         </section>
-        #parse('views/inc/js.vm')
+#parse('views/inc/account.vm')
+#parse('views/inc/js.vm')
+<script >
+var count = 1;
+jQuery(window).scroll(function ()
+{
+    if (((jQuery(window).scrollTop() + jQuery(window).height()) + 250) >= jQuery(document).height())
+    {
+        loading = true;
+		var tr = "<tr><td>" + (count++)+ "发言标题艺术人的追求号咯咯听哦</td>                            <td>Mark</td>                            <td>Otto</td>                            <td>1</td>                            <td>8</td>                            <td>4日前</td></tr>";
+		if(count<50){
+		    jQuery('#topicList').append(tr);
+		}else{
+		    jQuery('#noTopic').css('display','block');
+		}
+    }
+}
+);
+var $input = $('.typeahead');
+$input.typeahead({source:[{id: "someId1", name: "Display name 1"}, 
+            {id: "someId2", name: "Display name 2"}], 
+            autoSelect: true}); 
+</script>
     </body>
 </html>
