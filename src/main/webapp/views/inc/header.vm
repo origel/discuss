@@ -34,7 +34,7 @@
                   </ul>
             </div>
             <div class="panel clearfix">
-                <button class="btn btn-primary btn-small sign-up-button" data-toggle="modal" data-target="#register">注册</button>
+                <button class="btn btn-primary btn-small sign-up-button" data-toggle="modal" data-target="#register"><span class="glyphicon glyphicon-registration-mark"></span>&nbsp;注册</button>
                 <button class="btn btn-primary btn-small login-button" data-toggle="modal" data-target="#login">
                     <i class="glyphicon glyphicon-user"></i>
                     &nbsp;登录 </button>

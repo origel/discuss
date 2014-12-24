@@ -1,4 +1,26 @@
 <link href="${contextPath}/assets/bootstrap/css/bootstrap.min.css" media="all" rel="stylesheet" />
 <link href="data:text/css;charset=utf-8," data-href="${contextPath}/assets/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
-<link href="${contextPath}/assets/css/disscuss.css" media="all" rel="stylesheet" />
-<link href="${contextPath}/assets/ckeditor/samples/sample.css" media="all" rel="stylesheet" />
+<link href="data:text/css;charset=utf-8," data-href="${contextPath}/assets/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" id="bs-theme-stylesheet">
+<link href="${contextPath}/assets/css/disscuss.css" media="all" rel="stylesheet" charset="utf-8"/>
+<link href="${contextPath}/assets/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+	<style>
+  @font-face {
+    font-family: 'FontAwesome';
+    src: url('//discn.qiniudn.com/assets/fontawesome-webfont-8b36645d1f4140ee7b1372d000f0cf45.eot?http://discn.org&amp;1&v=4.0.4');
+    src: url('//discn.qiniudn.com/assets/fontawesome-webfont-8b36645d1f4140ee7b1372d000f0cf45.eot?http://discn.org&amp;1&v=4.0.4#iefix') format('embedded-opentype'),
+      url('//discn.qiniudn.com/assets/fontawesome-webfont-d070152e08af8f018c788909bbcbafc0.woff?http://discn.org&amp;1&v=4.0.4') format('woff'),
+      url('//discn.qiniudn.com/assets/fontawesome-webfont-837cb6609172c8e3f4240219b93dcdc7.ttf?http://discn.org&amp;1&v=4.0.4') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+        font-family: 'zocial';
+        src: url('//discn.qiniudn.com/assets/zocial-regular-webfont-b21460bf44daf98b04c5339edbd9f462.woff?http://discn.org&amp;1') format('woff'),
+            url('//discn.qiniudn.com/assets/zocial-regular-webfont-2aac6a4951f536aa302b3bcdc3424499.ttf?http://discn.org&amp;1') format('truetype'),
+            url('//discn.qiniudn.com/assets/zocial-regular-webfont-fa3fc124d7d87fba0c66eebefb8495ba.svg?http://discn.org&amp;1#zocialregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+
+  }
+</style>

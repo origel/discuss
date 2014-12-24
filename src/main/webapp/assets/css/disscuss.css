@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 body {
 	font-size:16px;
 }
@@ -72,4 +74,25 @@ body {
 }
 #listLinkMenu {
 	width:320px;
+}
+
+#reply-control{
+	position:fixed; 
+	bottom:0; 
+	left:0; 
+	width:100%;
+}
+#reply-control .toggler:before{
+	font-family:"FontAwesome";
+}
+#reply-control .toggler {
+    color: #222;
+    display: block;
+    font-size: 15px;
+    height: 13px;
+    position: absolute;
+    right: 20px;
+    text-decoration: none;
+    top: 15px;
+    width: 13px;
 }
