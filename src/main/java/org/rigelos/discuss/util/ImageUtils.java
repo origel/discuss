@@ -33,7 +33,7 @@ public class ImageUtils {
 
      public static void main(String[] args) {
         try {
-            ImageIO.write(getImage('C', 32), "png", new File("/home/zhuruixian/1.png"));
+            ImageIO.write(getImage('C', 32), "png", new File("d:\\1.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
