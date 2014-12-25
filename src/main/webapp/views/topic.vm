@@ -1,0 +1,56 @@
+<html>
+    <head>
+        #parse('views/inc/style.vm')
+    </head>
+    <body>
+        <section id="main">
+            #parse('views/inc/header.vm')
+            <div class="container hgt10">
+            </div>
+            <div id="topic-title">
+                <div class="container">
+                    <div class="inner">
+                        <a title="将此主题加入您的收藏列表" href="#">
+                            <span aria-hidden="true" class="glyphicon glyphicon-star-empty"></span>
+                        </a>
+                        <h1>
+                            <span class="private-message-glyph">
+                                <i class="fa fa-envelope"></i>
+                            </span>
+                            <a data-ember-action="142" href="/t/freehao123/31">
+                                @freehao123,这程序适合在虚拟主机上跑吗？
+                            </a>
+                        </h1>
+                        <div class="title-category-wrapper">
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<div class="container">
+				<div class="row">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-1">
+                              <div class="contents">
+                                  <a href="/users/hechaocheng" class="ember-view trigger-expansion main-avatar" id="ember3143"><img width="45" height="45" title="hechaocheng" class="avatar" src="//discn.qiniudn.com/user_avatar/www.discn.org/hechaocheng/45/18.png"></a>
+                              </div>
+                            </div>
+							<div class="topic-body">
+								<div class="topic-meta-data">
+                                    <div style="width:80px;float:left;"><span class="username new-user"><a data-auto-route="true" href="/users/hechaocheng">hechaocheng</a></span></div>
+                                    <div  style="width:80px;float:right;">
+                                      <a data-bindattr-456="456" data-post-number="1" data-share-url="/t/freehao123/31?u=zhurx" href="/t/freehao123/31?u=zhurx" class="post-date"><span data-format="tiny" data-time="1403887971343" title="2014年6月28日早上12点52" class="relative-date">6月28日</span></a>
+                                    </div>
+                                    <div title="主题是未读的" data-bindattr-457="457" class="read-state read"><i class="fa fa-circle"></i></div>
+                                  </div>
+								  <div class="container">
+								@freehao123,这程序适合在虚拟主机上跑吗？标题也要15个字符吗
+                                  </div>
+                            </div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
