@@ -8,6 +8,7 @@ import net.paoding.rose.jade.annotation.SQL;
 import net.paoding.rose.jade.annotation.SQLParam;
 
 import org.rigelos.discuss.model.Topic;
+import org.rigelos.discuss.model.TopicFilter;
 
 @DAO
 public interface TopicDAO {
@@ -20,10 +21,10 @@ public interface TopicDAO {
 
     @SQL("select " + FIELDS + " from " + TABLE + " where status=1 " +
          "#if(:size>0){ limit :offset,:size}")
-    public List<Topic> select(@SQLParam("topic") Topic topic, @SQLParam("offset") int offset, @SQLParam("size") int size);
+    public List<Topic> select(@SQLParam("filter") TopicFilter filter, @SQLParam("offset") int offset, @SQLParam("size") int size);
 
     @SQL("select count(*) from " + TABLE + " where status=1 ")
-    public int getCount(@SQLParam("topic") Topic topic);
+    public int getCount(@SQLParam("filter") TopicFilter filter);
 
     @ReturnGeneratedKeys
     @SQL("insert into " + TABLE + FIELDS_REPLACE + " values(:topic.topicId,:topic.title,:topic.content,:topic.categoryId,:topic.userId,:topic.posts,:topic.views,:topic.likes,:topic.createTime,:topic.updateTime,:topic.status)")

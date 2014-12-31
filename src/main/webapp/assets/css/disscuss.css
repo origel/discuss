@@ -114,3 +114,26 @@ body {
     height: 0;
     visibility: hidden;
 }
+.topicFavorite {
+	float: left; 
+	margin-top: 10px;
+}
+.topic-avatar {
+	width: 45px;
+	float: left;
+	padding-top: 16px;
+}
+#reply-control {
+	display:none;
+	width:100%;
+	background-color:#e9e9e9;
+	padding-left:37px;
+	padding-right:37px;
+}
+.edui-container {
+	width:100%;
+}
+.selectpicker {
+	top:0px;
+	margin-top:0px;
+}

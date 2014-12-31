@@ -1,7 +1,6 @@
 package org.rigelos.discuss.service;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
