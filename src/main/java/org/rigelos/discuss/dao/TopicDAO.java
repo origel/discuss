@@ -19,7 +19,7 @@ public interface TopicDAO {
     @SQL("update " + TABLE + " set status=0 where topicId=:topicId and status=1")
     public int remove(@SQLParam("topicId") long topicId);
 
-    @SQL("select " + FIELDS + " from " + TABLE + " where status=1 " +
+    @SQL("select " + FIELDS + " from " + TABLE + " where status=1 order by updateTime desc " +
          "#if(:size>0){ limit :offset,:size}")
     public List<Topic> select(@SQLParam("filter") TopicFilter filter, @SQLParam("offset") int offset, @SQLParam("size") int size);
 
@@ -27,7 +27,7 @@ public interface TopicDAO {
     public int getCount(@SQLParam("filter") TopicFilter filter);
 
     @ReturnGeneratedKeys
-    @SQL("insert into " + TABLE + FIELDS_REPLACE + " values(:topic.topicId,:topic.title,:topic.content,:topic.categoryId,:topic.userId,:topic.posts,:topic.views,:topic.likes,:topic.createTime,:topic.updateTime,:topic.status)")
+    @SQL("insert into " + TABLE + FIELDS_REPLACE + " values(:topic.topicId,:topic.title,:topic.content,:topic.categoryId,:topic.userId,:topic.posts,:topic.views,:topic.likes,now(),now(),:topic.status)")
     public int add(@SQLParam("topic") Topic topic);
 
     @SQL("update " + TABLE + " set title=:topic.title,content=:topic.content,categoryId=:topic.categoryId,userId=:topic.userId,posts=:topic.posts,views=:topic.views,likes=:topic.likes,createTime=:topic.createTime,updateTime=:topic.updateTime,status=:topic.status where topicId=:topic.topicId")

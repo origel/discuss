@@ -1,7 +1,7 @@
 #macro(pagination,$contextPath,$pageInfo)
 #if($pageInfo)
-<div class="pagination pagination-right" style="float:right;width: 70%;">
-    <ul>
+<div style="float:right;">
+    <ul class="pagination">
 #if($pageInfo.previous>0)
         <li><a href="${contextPath}/${pageInfo.url}?page=$!{pageInfo.previous}&$pageInfo">上一页</a></li>
 #else
