@@ -27,7 +27,7 @@ public interface TopicDAO {
     public int getCount(@SQLParam("filter") TopicFilter filter);
 
     @ReturnGeneratedKeys
-    @SQL("insert into " + TABLE + FIELDS_REPLACE + " values(:topic.topicId,:topic.title,:topic.content,:topic.categoryId,:topic.userId,:topic.posts,:topic.views,:topic.likes,now(),now(),:topic.status)")
+    @SQL("insert into " + TABLE + FIELDS_REPLACE + " values(:topic.topicId,:topic.title,:topic.content,:topic.categoryId,:topic.userId,:topic.posts,:topic.views,:topic.likes,now(),now(),1)")
     public int add(@SQLParam("topic") Topic topic);
 
     @SQL("update " + TABLE + " set title=:topic.title,content=:topic.content,categoryId=:topic.categoryId,userId=:topic.userId,posts=:topic.posts,views=:topic.views,likes=:topic.likes,createTime=:topic.createTime,updateTime=:topic.updateTime,status=:topic.status where topicId=:topic.topicId")

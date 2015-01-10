@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="footer">
+        <div style="float:left">
+            <p class="copyright"> Powered by <strong>
+                    <a href="#" target="_blank">discuss</a>
+            </strong>
+            <em>1.0</em>
+            &copy; 2015 <a href="#" target="_blank">origelos</a>
+            </p>
+        </div>
+        <div class="footlinks">
+            <p>当前时区&nbsp;GMT+8, 现在时间是&nbsp;2015-01-01 17:29</p>
+            <p>
+                <a href="mailto:">联系我们</a>
+                &nbsp;-&nbsp;<a target="_blank" href="#">discuss</a>
+            </p>
+            <p></p>
+        </div>
+		<div class="container"></div>
+    </div>
+</div>

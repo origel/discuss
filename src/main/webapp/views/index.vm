@@ -1,4 +1,10 @@
-<html>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="not-ie" lang="en">
+<!--<![endif]-->
     <head>
         #parse('views/inc/style.vm')
     </head>
@@ -42,7 +48,9 @@
                                 <a href="#" class="navLink">未读</a>
                             </li>
                             <li role="presentation">
-                                <a href="#" class="navLink"><span class="glyphicon glyphicon-star"></span>&nbsp;收藏</a>
+                                <a href="#" class="navLink">
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    &nbsp;收藏</a>
                             </li>
                             <li role="presentation">
                                 <a href="#" class="navLink">热门</a>
@@ -52,9 +60,10 @@
                             </li>
                         </ul>
                     </div>
-					<div style="float:right;padding-left:10px;">
-						<button class="btn btn-primary btn-small" onclick="jQuery('#reply-control').css('display','block')">
-                        <i class="glyphicon glyphicon-plus"></i>&nbsp;创建主题 </button>
+                    <div style="float:right;padding-left:10px;">
+                        <button class="btn btn-primary btn-small" onclick="jQuery('#reply-control').css('display','block')">
+                            <i class="glyphicon glyphicon-plus"></i>
+                            &nbsp;创建主题 </button>
                     </div>
                 </div>
             </div>
@@ -69,83 +78,99 @@
                             <th style="width:204px;">参与者</th>
                             <th style="width:60px;">帖子</th>
                             <th style="width:60px;">浏览</th>
-                            <th style="width:170px;">活动</th>
+                            <th style="width:180px;">活动</th>
                         </tr>
                     </thead>
                     <tbody>
-#foreach($topic in $topicList)
-                        <tr>
-                            <td><a href="${contextPath}/topic-${topic.topicId}.html">$topic.title</a></td>
-                            <td>$topic.userId</td>
-                            <td>$topic.categoryId</td>
-                            <td>$topic.posts</td>
-                            <td>$topic.views</td>
-                            <td>$topic.updateTime</td>
-                        </tr>
-#end
+                        #foreach($topic in $topicList)
+                            <tr>
+                                <td>
+                                    <a href="${contextPath}/topic-${topic.topicId}.html">$topic.title</a>
+                                </td>
+                                <td>$topic.userId</td>
+                                <td>$topic.categoryId</td>
+                                <td>$topic.posts</td>
+                                <td>$topic.views</td>
+                                <td>$topic.updateTime</td>
+                            </tr>
+                        #end
                     </tbody>
                 </table>
-#pagination($contextPath, $pageInfo)
+                #pagination($contextPath, $pageInfo)
             </div>
             <div id="noTopic" class="container" style="display:none">
                 <h3> 没有更多主题可看了。</h3>
             </div>
             <div id="reply-control" class="container" style="">
-				<div class="container hgt10"></div>
-				<div>
-				<a title="隐藏或显示编辑面板" data-ember-action="119" class="toggler" href="#" onclick="jQuery('#reply-control').css('display','none')"><span class="glyphicon glyphicon-chevron-down"></span></a>
-                <strong>创建一个新主题</strong>
+                <div class="container hgt10"></div>
+                <div>
+                    <a style="float:right" title="隐藏或显示编辑面板" data-ember-action="119" class="toggle" href="#" onclick="jQuery('#reply-control').css('display','none')">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <strong>创建一个新主题</strong>
                 </div>
-				<div class="container hgt10"></div>
-				<div class="container" style="width: 100%; padding-left: 0px;">
-    				<div style="width:400px;float:left;">
-                    <input type="email" placeholder="简述此讨论内容是关于什么？" id="exampleInputEmail1" class="form-control" style="width:400px" />
-    				</div>
-					<div style="width:400px;float:left;">
-					 <select class="selectpicker" multiple data-max-options="2">
-                        <optgroup label="Condiments" data-max-options="2">
-                        <option>Mustard</option>
-                        <option>Ketchup</option>
-                        <option>Relish</option>
-                        </optgroup>
-                        <optgroup label="Breads" data-max-options="2">
-                        <option>Plain</option>
-                        <option>Steamed</option>
-                        <option>Toasted</option>
-                        </optgroup>
-                    </select>
+				<form id="createTopicForm" action="${contextPath}/addTopic.do">
+                <div class="container hgt10"></div>
+                <div class="container" style="width: 100%; padding-left: 0px;">
+                    <div style="width:400px;float:left;">
+                        <input type="text" placeholder="简述此讨论内容是关于什么？" id="titleId" name="title" class="form-control" style="width:400px" />
                     </div>
-				</div>
-				<div class="container hgt10">
-				</div>
-                    <script type="text/plain" id="myEditor" class="container" style="height:200px;">
-                        <p>这里我可以写一些输入提示</p>
-                    </script>
-				<div class="container hgt10">
-				</div>
-	            <div class="container" style="width: 100%; padding-left: 0px;">
-                    <button class="btn btn-primary btn-small login-button" data-toggle="modal" data-target="#login">
-                        <i class="glyphicon glyphicon-plus"></i>&nbsp;创建主题 </button>
-                    <button class="btn btn-danger btn-small login-button" data-toggle="modal" data-target="#login">
-                        <i class="glyphicon glyphicon-remove"></i>&nbsp;取消 </button>
+                    <div style="width:400px;float:left;">
+                        <select class="selectpicker" multiple data-max-options="2" name="categoryId">
+                            <optgroup label="Condiments" data-max-options="2">
+                                <option>Mustard</option>
+                                <option>Ketchup</option>
+                                <option>Relish</option>
+                            </optgroup>
+                            <optgroup label="Breads" data-max-options="2">
+                                <option>Plain</option>
+                                <option>Steamed</option>
+                                <option>Toasted</option>
+                            </optgroup>
+                        </select>
+                    </div>
                 </div>
-				<div class="container hgt10">
-				</div>
+                <div class="container hgt10">
+                </div>
+                <script type="text/plain" id="contentId" name="content" class="container" style="height:200px;">
+                    <p>这里我可以写一些输入提示</p>
+                </script>
+                <div class="container hgt10">
+                </div>
+                <div class="container" style="width: 100%; padding-left: 0px;">
+                    <button class="btn btn-primary btn-small login-button" id="createTopicId" onclick="return false;">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        &nbsp;创建 </button>
+                        <button class="btn btn-danger btn-small login-button" onclick="jQuery('#reply-control').css('display','none')">
+                            <i class="glyphicon glyphicon-remove"></i>
+                            &nbsp;取消 </button>
+                </div>
+                <div class="container hgt10">
+                </div>
+				</form>
             </div>
-</section>
-#parse('views/inc/account.vm')
-#parse('views/inc/js.vm')
-<script type="text/javascript">
-    //实例化编辑器
-    var um = UM.getEditor('myEditor', {minFrameHeight:"200px"});
-    um.addListener('blur',function(){
-    $('#focush2').html('编辑器失去焦点了')
-    });
-    um.addListener('focus',function(){
-    $('#focush2').html('')
-    });
-
-	jQuery('.selectpicker').selectpicker();
-</script>
-</body>
+#parse("views/inc/footer.vm")
+        </section>
+        #parse('views/inc/account.vm')
+        #parse('views/inc/js.vm')
+        <script type="text/javascript">
+            //实例化编辑器
+            var um = UM.getEditor('contentId', {minFrameHeight:"200px"});
+            um.addListener('blur',function(){
+            $('#focush2').html('编辑器失去焦点了')
+            });
+            um.addListener('focus',function(){
+            $('#focush2').html('')
+            });
+            jQuery('.selectpicker').selectpicker();
+			jQuery("#createTopicId").click(function(){
+                            　　　　ajaxSubmitForm('#createTopicForm',
+					function(response){
+					    location.href='${contextPath}/topic-' + response.data.topicId + '.html';
+					},
+					function(){alert(response.message);}
+			   );
+                            　　});
+        </script>
+    </body>
 </html>

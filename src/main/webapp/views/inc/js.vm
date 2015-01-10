@@ -1,5 +1,6 @@
 <script src="${contextPath}/assets/js/jquery-1.9.1.min.js"></script>
 <script src="${contextPath}/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="${contextPath}/assets/js/bootstrapx.js"></script>
 <script src="${contextPath}/assets/bootstrap/js/typeahead.js"></script>
 <script src="${contextPath}/assets/bootstrap/js/bootstrap-select.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="${contextPath}/assets/umeditor/umeditor.config.js"></script>

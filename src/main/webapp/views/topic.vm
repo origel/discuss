@@ -20,7 +20,7 @@
                                 <i class="fa fa-envelope"></i>
                             </span>
                             <a data-ember-action="142" href="/t/freehao123/31">
-                                @freehao123,这程序适合在虚拟主机上跑吗？
+                                $topic.title
                             </a>
                         </h1>
                         </div>
@@ -50,7 +50,7 @@
                                   </div>
 								  <div class="container">
 									<div class="cooked">
-                                      <p>@freehao123,这程序适合在虚拟主机上跑吗？标题也要15个字符吗</p>
+                                      <p>$topic.content</p>
                                     </div>
 								
                                   </div>
